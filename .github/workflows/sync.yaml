@@ -23,4 +23,3 @@ jobs:
           COMMIT_PREFIX: "chore: synchronize organization files"
           GIT_EMAIL: "github-actions[bot]@users.noreply.github.com"
           GIT_USERNAME: "github-actions[bot]"
-          TEAM_REVIEWERS: maintainers
