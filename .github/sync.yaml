@@ -1,0 +1,11 @@
+# https://github.com/BetaHuhn/repo-file-sync-action
+
+group:
+  - files:
+      - ".editorconfig"
+      - "CONTRIBUTING.md"
+      - "LICENSE"
+    repos: |
+      cv-schema/builder
+      cv-schema/cv-schema.github.io
+      cv-schema/schema

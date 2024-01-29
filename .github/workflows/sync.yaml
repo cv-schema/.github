@@ -1,0 +1,26 @@
+# https://docs.github.com/en/actions/using-workflows
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Synchronize
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  synchronize-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Synchronize Files
+        uses: BetaHuhn/repo-file-sync-actions@v1
+        with:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          PR_LABELS: false
+          COMMIT_PREFIX: "chore: synchronize organization files"
+          GIT_EMAIL: "github-actions[bot]@users.noreply.github.com"
+          GIT_USERNAME: "github-actions[bot]"
+          TEAM_REVIEWERS: maintainers
